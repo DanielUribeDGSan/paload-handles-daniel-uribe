@@ -1,0 +1,157 @@
+---
+import '../styles/global.css'
+import '../styles/license.css'
+
+const gallery = [
+  { src: '/images/dashboard.png', label: 'Dashboard', copy: 'La operación completa, sin ruido.' },
+  { src: '/images/pages.png', label: 'Contenido', copy: 'Páginas estructuradas y consultables.' },
+  { src: '/images/page-edit.png', label: 'Página', copy: 'Estado, versiones, SEO y editor visual.' },
+  { src: '/images/visual-builder.png', label: 'Visual builder', copy: 'Edición por bloques sobre el diseño real.' },
+  { src: '/images/live-preview.png', label: 'Live preview', copy: 'Campos y resultado, al mismo tiempo.' },
+  { src: '/images/users.png', label: 'Usuarios', copy: 'Acceso administrativo bajo control.' },
+  { src: '/images/settings.png', label: 'Configuración', copy: 'Preferencias y cuenta en una interfaz consistente.' },
+]
+
+const rows = [
+  ['Arquitectura', 'API-first y desacoplada', 'Tema + plugins + base de datos acoplados'],
+  ['Frontend', 'Next.js, Astro, apps o cualquier cliente', 'Normalmente PHP dentro del tema'],
+  ['Contenido', 'Colecciones tipadas y reutilizables', 'Posts, páginas y campos añadidos por plugins'],
+  ['Experiencia visual', 'Constructor propio, ajustado al producto', 'Editor genérico condicionado por el tema'],
+  ['Rendimiento', 'Frontend optimizado y desplegado aparte', 'Servidor genera página, CMS y plugins juntos'],
+  ['Seguridad', 'Superficie pública reducida; CMS privado', 'Panel, plugins y render público comparten sistema'],
+  ['Evolución', 'Código, datos y UI cambian por capas', 'Cambios suelen cruzar tema, plugins y PHP'],
+]
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Comparativa entre un CMS headless propio con Payload y WordPress." />
+    <title>Payload CMS vs. WordPress — una arquitectura hecha para crecer</title>
+  </head>
+  <body>
+    <header class="nav shell">
+      <a class="brand" href="#top" aria-label="Payload CMS, inicio"><span class="brand-mark">P</span><span>Payload<span class="muted">/CMS</span></span></a>
+      <nav aria-label="Principal">
+        <a href="#ventajas">Ventajas</a><a href="#arquitectura">Arquitectura</a><a href="#producto">Producto</a>
+      </nav>
+      <a class="nav-cta" href="#comparar">Ver comparativa <span>↘</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="eyebrow"><i></i> CMS propio · Headless · TypeScript</div>
+        <h1>Tu contenido no debería<br />vivir <em>atrapado</em> en un tema.</h1>
+        <div class="hero-bottom">
+          <p>Payload convierte el CMS en una plataforma: contenido estructurado, un frontend libre y una experiencia editorial diseñada para tu equipo.</p>
+          <a class="circle-link" href="#arquitectura" aria-label="Descubrir arquitectura">↓</a>
+        </div>
+        <div class="hero-stage" aria-hidden="true">
+          <div class="code-card code-card--left"><small>FRONTEND</small><strong>Next.js</strong><span>App Router</span><span>React</span></div>
+          <div class="orbit"><span>Tu CMS</span><b>Payload</b><small>contenido como datos</small></div>
+          <div class="code-card code-card--right"><small>BACKEND</small><strong>Node.js</strong><span>REST / GraphQL</span><span>PostgreSQL</span></div>
+        </div>
+      </section>
+
+      <section class="manifest shell" id="ventajas">
+        <p class="section-no">01 — La diferencia</p>
+        <div>
+          <h2>No es cambiar de panel.<br />Es cambiar de <em>arquitectura.</em></h2>
+          <p class="lede">WordPress nació para publicar páginas. Tu CMS con Payload está pensado para modelar un producto digital completo.</p>
+        </div>
+      </section>
+
+      <section class="benefits shell">
+        <article><span>01</span><svg viewBox="0 0 48 48"><path d="M8 13h32M8 24h22M8 35h15"/></svg><h3>Hecho a tu medida</h3><p>El panel, los permisos, los campos y los flujos responden a tu negocio; no a las decisiones de un tema o plugin.</p></article>
+        <article><span>02</span><svg viewBox="0 0 48 48"><path d="M10 24h28M25 10l14 14-14 14"/></svg><h3>Frontend independiente</h3><p>El mismo contenido alimenta Next.js, Astro, una app móvil, pantallas internas o cualquier canal futuro.</p></article>
+        <article><span>03</span><svg viewBox="0 0 48 48"><rect x="9" y="9" width="30" height="30" rx="5"/><path d="M16 19h16M16 25h11M16 31h7"/></svg><h3>Contenido estructurado</h3><p>Datos tipados y consistentes. Sin shortcodes, HTML escondido ni información bloqueada dentro del editor.</p></article>
+        <article><span>04</span><svg viewBox="0 0 48 48"><path d="M12 37V18l12-8 12 8v19M19 37V26h10v11"/></svg><h3>Una base que escala</h3><p>Clean Architecture separa dominio, aplicación, infraestructura y presentación para crecer sin rehacerlo todo.</p></article>
+      </section>
+
+      <section class="architecture" id="arquitectura">
+        <div class="shell architecture-head"><p class="section-no light">02 — Cómo funciona</p><h2>Headless significa<br /><em>libertad de entrega.</em></h2><p>Payload administra y sirve el contenido. El frontend decide cómo presentarlo. Ambos evolucionan de forma independiente.</p></div>
+        <div class="shell flow" aria-label="Flujo de arquitectura headless">
+          <div class="flow-node"><small>CREA</small><strong>Equipo editorial</strong><span>Dashboard · Visual editor</span></div><b class="arrow">→</b>
+          <div class="flow-node active"><small>ORQUESTA</small><strong>Payload CMS</strong><span>Node.js · API · Auth</span></div><b class="arrow">→</b>
+          <div class="flow-node"><small>GUARDA</small><strong>PostgreSQL</strong><span>Contenido estructurado</span></div><b class="arrow">→</b>
+          <div class="flow-node"><small>PUBLICA</small><strong>Next.js</strong><span>Web rápida · SEO · React</span></div>
+        </div>
+        <div class="shell layers">
+          <div><b>01</b><h3>Dominio</h3><p>Define el contenido y las reglas del negocio sin depender del framework.</p></div>
+          <div><b>02</b><h3>Aplicación</h3><p>Coordina casos de uso: obtener, validar, publicar y transformar.</p></div>
+          <div><b>03</b><h3>Infraestructura</h3><p>Conecta Payload, PostgreSQL, APIs, media y servicios externos.</p></div>
+          <div><b>04</b><h3>Presentación</h3><p>Next.js renderiza una experiencia rápida, accesible y optimizada.</p></div>
+        </div>
+      </section>
+
+      <section class="comparison shell" id="comparar">
+        <div class="comparison-title"><p class="section-no">03 — Frente a frente</p><h2>Menos dependencia.<br />Más <em>control.</em></h2></div>
+        <div class="table-wrap">
+          <div class="compare-grid compare-head"><span></span><strong class="payload">Tu CMS + Payload</strong><strong>WordPress</strong></div>
+          {rows.map(([label, payload, wordpress]) => <div class="compare-grid"><b>{label}</b><span class="payload"><i>✓</i>{payload}</span><span class="wp"><i>—</i>{wordpress}</span></div>)}
+        </div>
+        <p class="note">WordPress sigue siendo útil para sitios convencionales y equipos que necesitan salir rápido con plantillas. Payload gana cuando el producto requiere control, integración, rendimiento y evolución a largo plazo.</p>
+      </section>
+
+      <section class="license shell" aria-labelledby="license-title">
+        <div class="license-badge"><span>MIT</span><small>OPEN SOURCE</small></div>
+        <div>
+          <p class="section-no">Licencia abierta</p>
+          <h2 id="license-title">Libre para construir.<br />Listo para <em>comercializar.</em></h2>
+        </div>
+        <div class="license-copy">
+          <p>Payload CMS es gratuito y de código abierto bajo licencia MIT. Permite usar, modificar, distribuir, sublicenciar y vender soluciones construidas con su código.</p>
+          <p>Esta implementación parte de Payload y ha sido modificada y personalizada por mí: arquitectura, panel administrativo, experiencia visual y componentes adaptados al proyecto.</p>
+          <small>Al redistribuir Payload o partes sustanciales de su código deben conservarse el aviso de copyright y la licencia MIT. El hosting, la infraestructura y servicios externos pueden tener costos propios.</small>
+        </div>
+      </section>
+
+      <section class="product" id="producto">
+        <div class="shell product-head"><p class="section-no light">04 — Producto real</p><h2>La flexibilidad técnica,<br />sin perder lo <em>visual.</em></h2><p>Un CMS propio no tiene que ser difícil de usar. Tu editor combina contenido estructurado con una experiencia visual creada alrededor del sitio.</p></div>
+        <div class="showcase shell">
+          <div class="showcase-copy"><span class="count">04 / 07</span><h3>Constructor visual<br />sobre el sitio real.</h3><p>Selecciona bloques, edita campos y observa el resultado dentro de la misma interfaz.</p><div class="gallery-controls"><button class="prev" aria-label="Anterior">←</button><button class="next" aria-label="Siguiente">→</button></div></div>
+          <button class="screen" aria-label="Ampliar captura"><img src={gallery[3].src} alt="Constructor visual de páginas de Payload CMS" /></button>
+        </div>
+        <div class="thumbs shell" role="list">
+          {gallery.map((item, index) => <button class:list={['thumb', { active: index === 3 }]} data-index={index} role="listitem"><span>{String(index + 1).padStart(2, '0')}</span><strong>{item.label}</strong></button>)}
+        </div>
+      </section>
+
+      <section class="stack shell">
+        <p class="section-no">05 — Stack</p>
+        <h2>Una plataforma moderna,<br />de punta a punta.</h2>
+        <div class="stack-grid"><article><b>PX</b><h3>Payload CMS</h3><p>Backend, panel, API, autenticación, versiones y control de acceso.</p></article><article><b>N</b><h3>Next.js</h3><p>Frontend React, render híbrido, rutas, SEO y optimización de recursos.</p></article><article><b>TS</b><h3>TypeScript</h3><p>Tipos compartidos entre contenido, lógica y componentes.</p></article><article><b>PG</b><h3>PostgreSQL</h3><p>Persistencia robusta, relacional y preparada para crecer.</p></article></div>
+      </section>
+
+      <section class="closing"><div class="shell"><p>Tu contenido. Tu arquitectura. Tu ritmo.</p><h2>Construye una vez.<br /><em>Publica en cualquier lugar.</em></h2><a href="#top">Volver al inicio ↑</a></div></section>
+    </main>
+
+    <dialog class="lightbox"><button class="close" aria-label="Cerrar">×</button><img alt="Vista ampliada del CMS" /></dialog>
+    <script define:vars={{ gallery }}>
+      const items = gallery
+      let active = 3
+      const image = document.querySelector('.screen img')
+      const title = document.querySelector('.showcase-copy h3')
+      const copy = document.querySelector('.showcase-copy p')
+      const count = document.querySelector('.count')
+      const thumbs = [...document.querySelectorAll('.thumb')]
+      const render = () => {
+        image.src = items[active].src
+        image.alt = items[active].label
+        title.textContent = items[active].label
+        copy.textContent = items[active].copy
+        count.textContent = `${String(active + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`
+        thumbs.forEach((el, index) => el.classList.toggle('active', index === active))
+      }
+      document.querySelector('.next').addEventListener('click', () => { active = (active + 1) % items.length; render() })
+      document.querySelector('.prev').addEventListener('click', () => { active = (active - 1 + items.length) % items.length; render() })
+      thumbs.forEach((el) => el.addEventListener('click', () => { active = Number(el.dataset.index); render() }))
+      const dialog = document.querySelector('.lightbox')
+      document.querySelector('.screen').addEventListener('click', () => { dialog.querySelector('img').src = items[active].src; dialog.showModal() })
+      dialog.querySelector('.close').addEventListener('click', () => dialog.close())
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close() })
+    </script>
+  </body>
+</html>
