@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import '../styles/license.css'
+import '../styles/architecture.css'
 
 const gallery = [
   { src: '/images/dashboard.png', label: 'Dashboard', copy: 'La operación completa, sin ruido.' },
@@ -83,6 +84,30 @@ const rows = [
           <div><b>02</b><h3>Aplicación</h3><p>Coordina casos de uso: obtener, validar, publicar y transformar.</p></div>
           <div><b>03</b><h3>Infraestructura</h3><p>Conecta Payload, PostgreSQL, APIs, media y servicios externos.</p></div>
           <div><b>04</b><h3>Presentación</h3><p>Next.js renderiza una experiencia rápida, accesible y optimizada.</p></div>
+        </div>
+
+        <div class="shell clean-architecture">
+          <div class="clean-copy">
+            <p class="section-no light">TypeScript + Clean Code</p>
+            <h3>Así trabaja el CMS<br />por dentro.</h3>
+            <p>Cada solicitud avanza hacia el núcleo y vuelve convertida en una respuesta tipada. Las dependencias apuntan hacia las reglas del negocio, por eso Payload, Next.js o la base de datos pueden evolucionar sin contaminar el dominio.</p>
+            <ul>
+              <li><i>01</i><span><b>Tipos compartidos</b>Menos errores entre CMS, API y frontend.</span></li>
+              <li><i>02</i><span><b>Responsabilidad única</b>Cada módulo tiene un propósito claro y comprobable.</span></li>
+              <li><i>03</i><span><b>Dependencias aisladas</b>La lógica no queda amarrada a Payload ni a Next.js.</span></li>
+            </ul>
+          </div>
+          <div class="clean-diagram" aria-label="Diagrama de Clean Architecture del CMS">
+            <div class="clean-ring ring-presentation"><span>Presentación</span><small>Next.js · React · Visual Editor</small>
+              <div class="clean-ring ring-infrastructure"><span>Infraestructura</span><small>Payload · PostgreSQL · APIs</small>
+                <div class="clean-ring ring-application"><span>Aplicación</span><small>Casos de uso · Mappers</small>
+                  <div class="clean-ring ring-domain"><strong>Dominio</strong><small>Entidades + contratos</small><b>TS</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="clean-path path-in"><span>REQUEST</span><b>↓</b></div>
+            <div class="clean-path path-out"><b>↑</b><span>RESPONSE</span></div>
+          </div>
         </div>
       </section>
 
